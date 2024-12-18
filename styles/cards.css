@@ -3,12 +3,16 @@
     flex-direction: column;
     width: 100%;
 
-    & .card-client {
+    & .card {
         background-color: var(--base-gray-100);
         border: 1px solid var(--base-gray-300);
         border-radius: 1rem;
-        padding: 1rem;
+        padding: 1.5rem 1.25rem;
+    }
+
+    & .card-client {
         align-items: center;
+        padding: 1rem;
 
         & img {
             background: linear-gradient(white, white) padding-box,
@@ -17,34 +21,95 @@
             border: 2px solid transparent;
         }
 
-        & p {
+        & h3 {
             color: var(--base-gray-600);
-            font: 700 var(--heading-title-sm) / 1.4 var(--ff-base);
+            font-size: var(--heading-title-sm);
+            font-weight: 700;
         }
 
-        & span {
+        & p {
             color: var(--base-gray-500);
-            font: var(--body-text-xs) / 1.4 var(--ff-base);
+            font-size: var(--body-text-xs);
+            text-wrap: wrap;
         }
     }
 
     & .card-loyalty {
-        background-color: brown;
-    }
+        & header {
+            padding: 0;
+            align-items: flex-start;
+            width: 100%;
 
-    & .card-cutting-counter {
-        background-color: chocolate;
-    }
+            & h3 {
+                font-weight: 700;
+                color: var(--base-gray-500);
+                font-size: var(--heading-subtitle-sm);
+                text-transform: uppercase;
+            }
 
-    & .card-history {
-        background-color: blueviolet;
+            & p {
+                color: var(--base-gray-500);
+                font-size: var(--body-text-xs);
+            }
+
+            & .id {
+                background-color: var(--base-gray-300);
+                border-radius: 0.75rem;
+                text-align: center;
+
+                & span {
+                    text-wrap: nowrap;
+                    display: inline-block; /* or block */
+                    padding: 0.25rem 0.5rem;
+
+                    color: var(--base-gray-500);
+                    font-size: var(--heading-subtitle-sm);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        & .check-cuts {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(auto-fill, minmax(50px, auto));
+
+            justify-content: center;
+            list-style: none;
+            gap: 0.5rem;
+
+            & li {
+                min-width: 3.5rem;
+                min-height: 3.5rem;
+
+                background-color: var(--base-gray-200);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                aspect-ratio: 1 / 1;
+                border-radius: 0.75rem;
+                max-width: 100%;
+
+                & img {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+            }
+
+            & li:nth-last-child(1) {
+                background-image: url(../assets/icons/gift-solid.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 1.5rem;
+                fill: var(--base-gray-500);
+            }
+        }
     }
 }
 
 @media (width >= 80em) {
     .cards {
         display: grid;
-        margin-inline: 16.5rem;
+        padding-inline: 16.5rem;
         grid-template-areas:
             'A B B'
             'C B B'
@@ -56,14 +121,47 @@
     }
 
     & .card-history {
-        grid-area: B;
+        grid-area: C;
     }
 
     & .card-loyalty {
-        grid-area: C;
+        grid-area: B;
+
+        & .check-cuts {
+            gap: 1rem !important;
+
+            & li {
+                border-radius: 1.25rem;
+            }
+        }
     }
 
     & .card-cutting-counter {
         grid-area: D;
+    }
+}
+
+@media (width <= 22rem) {
+    .cards {
+        & .card-loyalty {
+            & .check-cuts {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
+@media (width <= 20rem) {
+    & .card-loyalty {
+        & header {
+            flex-direction: column-reverse;
+        }
+
+        & .check-cuts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly !important;
+            align-items: center;
+        }
     }
 }
