@@ -31,6 +31,9 @@
     /* Text-size styles */
     --ff-base: 'Oxygen', sans-serif;
 
+    --fw-base: 400;
+    --fw-bold: 700;
+
     --heading-title-md: 1.5rem;
     --heading-title-sm: 1.12rem;
     --heading-subtitle-md: 0.88rem;
@@ -42,4 +45,31 @@
 
 html {
     background-color: var(--base-gray-200);
+    font: var(--fw-base) var(--body-text-md) / 1.4 var(--ff-base);
+}
+
+main {
+    margin-inline: 0.75rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.between {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gap-1 {
+    gap: 1rem;
 }

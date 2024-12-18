@@ -1,0 +1,38 @@
+form {
+    width: 100%;
+
+    & .input-wrapper {
+        width: 100%;
+        max-width: 25rem;
+        padding: 0.5rem;
+
+        background-color: var(--base-gray-300);
+        border: 1px solid var(--base-gray-400);
+        border-radius: 0.75rem;
+
+        & input,
+        & input:focus,
+        & input:focus-visible {
+            font: var(--fw-base) var(--body-text-md) / 1.4 var(--ff-base);
+            border: none;
+            background: transparent;
+            padding: 0.5rem;
+            outline: none;
+            color: var(--base-gray-500);
+        }
+
+        & .search-button {
+            cursor: pointer;
+            border: none;
+            background-color: var(--base-gray-500);
+            border-radius: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+
+            & img {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+    }
+}
