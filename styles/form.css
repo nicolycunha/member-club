@@ -3,7 +3,7 @@ form {
 
     & .input-wrapper {
         width: 100%;
-        max-width: 25rem;
+        max-width: 30rem;
         padding: 0.5rem;
 
         background-color: var(--base-gray-300);
@@ -34,5 +34,11 @@ form {
                 height: 1.25rem;
             }
         }
+    }
+}
+
+@media (width >= 80em) {
+    form {
+        margin-block: 1rem;
     }
 }

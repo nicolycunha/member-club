@@ -22,10 +22,17 @@
 
     --linear-gradient-base: linear-gradient(
         90deg,
-         #2DAA6E 0%,
-         #2DAAAA 33.33%,
-         #856CCF 66.67%,
-         #D658B3 100%
+        rgba(45, 170, 110, 1) 0%,
+        rgba(45, 170, 170, 1) 33%,
+        rgba(133, 108, 207, 1) 66%,
+        rgba(214, 88, 179, 1) 100%
+    );
+    --linear-gradient-image: linear-gradient(
+        90deg,
+        rgba(45, 170, 110, 1) 0%,
+        rgba(45, 170, 170, 1) 10%,
+        rgba(133, 108, 207, 1) 90%,
+        rgba(214, 88, 179, 1) 100%
     );
 
     /* Text-size styles */
