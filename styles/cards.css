@@ -104,6 +104,69 @@
             }
         }
     }
+
+    & .card-cutting-counter {
+        & header {
+            padding: 0;
+            width: fit-content;
+            gap: 0.25rem;
+            flex-basis: 90%;
+
+            & h2 {
+                font-weight: 500;
+                color: var(--base-gray-600);
+                font-size: var(--body-text-sm);
+
+                & strong {
+                    font-size: var(--heading-title-sm);
+                }
+            }
+
+            & .progress {
+                width: 100%;
+                align-items: center;
+
+                & progress {
+                    width: 100%;
+                    height: 0.5rem;
+                    appearance: none;
+                    border-radius: 0.5rem;
+                    background-color: var(--base-gray-300);
+                    flex-basis: 90%;
+                }
+
+                & progress::-webkit-progress-value {
+                    background: var(--linear-gradient-base);
+                    border-radius: 0.5rem;
+                }
+
+                progress::-webkit-progress-bar {
+                    background-color: var(--base-gray-300);
+                    border-radius: 0.5rem;
+                }
+
+                progress::-moz-progress-bar {
+                    background: var(--linear-gradient-base);
+                }
+
+                & p {
+                    color: var(--base-gray-500);
+                    font-size: var(--body-text-xs);
+                    text-wrap: nowrap;
+                    flex-basis: 10%;
+                }
+            }
+        }
+
+        & div {
+            flex-basis: 10%;
+
+            & img {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+    }
 }
 
 @media (width >= 80em) {
