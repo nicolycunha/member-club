@@ -1,0 +1,23 @@
+.card-client {
+    align-items: center;
+    padding: 1rem;
+
+    & img {
+        background: linear-gradient(white, white) padding-box,
+            var(--linear-gradient-image) border-box;
+        border-radius: 0.625rem;
+        border: 2px solid transparent;
+    }
+
+    & h2 {
+        color: var(--base-gray-600);
+        font-size: var(--heading-title-sm);
+        font-weight: 700;
+    }
+
+    & p {
+        color: var(--base-gray-500);
+        font-size: var(--body-text-xs);
+        text-wrap: wrap;
+    }
+}

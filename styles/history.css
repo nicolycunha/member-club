@@ -1,0 +1,57 @@
+.card-history {
+    overflow: hidden;
+
+    & header {
+        padding: 0;
+    }
+
+    & .logs {
+        padding-top: 1rem;
+        height: 85%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--base-gray-100);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--base-gray-300);
+            border-radius: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: var(--base-gray-400);
+        }
+
+        & .log {
+            margin-right: 0.5rem;
+            & .date-time {
+                & h4 {
+                    color: var(--base-gray-600) !important;
+                }
+
+                & p {
+                    font-size: var(--body-text-xs);
+                    color: var(--base-gray-500);
+                    margin-top: 0.125rem;
+                }
+            }
+
+            & .check {
+                background-color: rgb(69, 180, 66, 0.12);
+                border-radius: 50%;
+                height: 2rem;
+                width: 2rem;
+
+                & img {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+            }
+        }
+    }
+}

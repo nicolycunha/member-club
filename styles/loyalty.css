@@ -1,0 +1,105 @@
+.card-loyalty {
+    & header {
+        padding: 0;
+        align-items: flex-start;
+        width: 100%;
+
+        & h3 {
+            font-weight: 700;
+            color: var(--base-gray-500);
+            font-size: var(--heading-subtitle-sm);
+            text-transform: uppercase;
+        }
+
+        & p {
+            color: var(--base-gray-500);
+            font-size: var(--body-text-xs);
+        }
+
+        & .id {
+            background-color: var(--base-gray-300);
+            border-radius: 0.75rem;
+            text-align: center;
+
+            & span {
+                text-wrap: nowrap;
+                display: inline-block; /* or block */
+                padding: 0.25rem 0.5rem;
+
+                color: var(--base-gray-500);
+                font-size: var(--heading-subtitle-sm);
+                font-weight: 700;
+            }
+        }
+    }
+
+    & .check-cuts {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(auto-fill, minmax(50px, auto));
+
+        justify-content: center;
+        list-style: none;
+        gap: 0.5rem;
+
+        & li {
+            min-width: 3.5rem;
+            min-height: 3.5rem;
+
+            background-color: var(--base-gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1 / 1;
+            border-radius: 0.75rem;
+            max-width: 100%;
+
+            & img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+        & li:nth-last-child(1) {
+            background-image: url(../assets/icons/gift-solid.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1.5rem;
+            fill: var(--base-gray-500);
+        }
+    }
+}
+
+@media (width >= 80em) {
+    & .card-loyalty {
+        & .check-cuts {
+            gap: 1rem !important;
+
+            & li {
+                border-radius: 1.25rem;
+            }
+        }
+    }
+}
+
+@media (width <= 22rem) {
+    .card-loyalty {
+        & .check-cuts {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+@media (width <= 20rem) {
+    .card-loyalty {
+        & header {
+            flex-direction: column-reverse;
+        }
+
+        & .check-cuts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly !important;
+            align-items: center;
+        }
+    }
+}

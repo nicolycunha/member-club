@@ -56,7 +56,7 @@
                     <!--exemplo para preenchimento posterior em js-->
                     <img src="assets/images/client.png" alt="Foto do cliente" />
                     <div class="info">
-                        <h3>Natália Miranda</h3>
+                        <h2>Natália Miranda</h2>
                         <p>Cliente desde 18/09/2023</p>
                     </div>
                 </article>
@@ -64,7 +64,7 @@
                 <article class="card card-loyalty flex column gap-1">
                     <header class="flex gap-1 between">
                         <section class="description">
-                            <h3>Cartão Fidelidade</h3>
+                            <h3 class="subtitle">Cartão Fidelidade</h3>
                             <p>
                                 Ao fazer cortes de cabelo, o décimo sai de
                                 graça!
@@ -112,7 +112,7 @@
                         <h2><strong>3</strong> cortes restantes</h2>
                         <div class="progress flex gap-1">
                             <progress value="7" max="10"></progress>
-                            <p>7 de 10</p>
+                            <p class="details-text">7 de 10</p>
                         </div>
                     </header>
                     <div class="flex end">
@@ -124,7 +124,62 @@
                     </div>
                 </article>
 
-                <article class="card card-history">histórico de cortes</article>
+                <article class="card card-history">
+                    <header class="flex between mb-1 mt-0">
+                        <h3 class="subtitle">Histórico</h3>
+                        <p class="details-text">7 cortes</p>
+                    </header>
+
+                    <hr class="solid" />
+
+                    <section class="logs flex column gap-1">
+                        <div class="log flex between">
+                            <div class="date-time">
+                                <h4 class="subtitle">29/04/2024</h4>
+                                <p class="time">18:30</p>
+                            </div>
+                            <div class="check flex center">
+                                <img src="assets/icons/check.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="log flex between">
+                            <div class="date-time">
+                                <h4 class="subtitle">16/03/2024</h4>
+                                <p class="time">17:00</p>
+                            </div>
+                            <div class="check flex center">
+                                <img src="assets/icons/check.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="log flex between">
+                            <div class="date-time">
+                                <h4 class="subtitle">01/02/2024</h4>
+                                <p class="time">17:30</p>
+                            </div>
+                            <div class="check flex center">
+                                <img src="assets/icons/check.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="log flex between">
+                            <div class="date-time">
+                                <h4 class="subtitle">03/01/2024</h4>
+                                <p class="time">15:00</p>
+                            </div>
+                            <div class="check flex center">
+                                <img src="assets/icons/check.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="log flex between">
+                            <div class="date-time">
+                                <h4 class="subtitle">03/01/2024</h4>
+                                <p class="time">15:00</p>
+                            </div>
+                            <div class="check flex center">
+                                <img src="assets/icons/check.svg" alt="" />
+                            </div>
+                        </div>
+                    </section>
+                </article>
             </section>
         </main>
     </body>

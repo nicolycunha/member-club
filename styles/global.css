@@ -57,34 +57,5 @@ html {
 
 main {
     margin-inline: 0.75rem;
-}
-
-.flex {
-    display: flex;
-}
-
-.grid {
-    display: grid;
-}
-
-.column {
-    flex-direction: column;
-}
-
-.center {
-    align-items: center;
-    justify-content: center;
-}
-
-.between {
-    align-items: center;
-    justify-content: space-between;
-}
-
-.end {
-    justify-content: flex-end;
-}
-
-.gap-1 {
-    gap: 1rem;
+    margin-bottom: 1rem;
 }

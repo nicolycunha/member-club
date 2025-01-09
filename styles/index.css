@@ -1,4 +1,9 @@
 @import url(global.css);
+@import url(utilities.css);
 @import url(header.css);
 @import url(form.css);
 @import url(cards.css);
+@import url(client.css);
+@import url(loyalty.css);
+@import url(cutting.css);
+@import url(history.css);
