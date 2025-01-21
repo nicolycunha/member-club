@@ -15,36 +15,36 @@
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="assets/favicons/apple-touch-icon.png"
+            href="src/assets/favicons/apple-touch-icon.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="assets/favicons/favicon-32x32.png"
+            href="src/assets/favicons/favicon-32x32.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="assets/favicons/favicon-16x16.png"
+            href="src/assets/favicons/favicon-16x16.png"
         />
-        <link rel="manifest" href="assets/favicons/site.webmanifest" />
+        <link rel="manifest" href="src/assets/favicons/site.webmanifest" />
 
-        <link rel="stylesheet" href="styles/index.css" />
+        <link rel="stylesheet" href="src/styles/index.css" />
     </head>
     <body>
         <main class="flex column center gap-1">
             <header class="flex center">
-                <img src="assets/logo.png" alt="Logo do Member Club" />
+                <img src="src/assets/logo.png" alt="Logo do Member Club" />
             </header>
 
             <form class="flex center">
                 <div class="input-wrapper flex between">
-                    <input id="name" type="text" placeholder="ID do cartão" />
+                    <input id="id" type="text" placeholder="ID do cartão" />
                     <button class="search-button flex center">
                         <img
-                            src="assets/icons/arrow-down-left.svg"
+                            src="src/assets/icons/arrow-down-left.svg"
                             alt="Buscar"
                         />
                     </button>
@@ -54,7 +54,10 @@
             <section class="cards gap-1">
                 <article class="card card-client flex gap-1">
                     <!--exemplo para preenchimento posterior em js-->
-                    <img src="assets/images/client.png" alt="Foto do cliente" />
+                    <img
+                        src="src/assets/images/client.png"
+                        alt="Foto do cliente"
+                    />
                     <div class="info">
                         <h2>Natália Miranda</h2>
                         <p>Cliente desde 18/09/2023</p>
@@ -77,28 +80,28 @@
 
                     <ul class="check-cuts grid">
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts">
-                            <img src="assets/images/check.png" alt="" />
+                            <img src="src/assets/images/check.png" alt="" />
                         </li>
                         <li class="cuts"></li>
                         <li class="cuts"></li>
@@ -118,7 +121,7 @@
                     <div class="flex end">
                         <img
                             class="gift-box"
-                            src="assets/images/gift.png"
+                            src="src/assets/images/gift.png"
                             alt="Imagem de presente"
                         />
                     </div>
@@ -139,7 +142,7 @@
                                 <p class="time">18:30</p>
                             </div>
                             <div class="check flex center">
-                                <img src="assets/icons/check.svg" alt="" />
+                                <img src="src/assets/icons/check.svg" alt="" />
                             </div>
                         </div>
                         <div class="log flex between">
@@ -148,7 +151,7 @@
                                 <p class="time">17:00</p>
                             </div>
                             <div class="check flex center">
-                                <img src="assets/icons/check.svg" alt="" />
+                                <img src="src/assets/icons/check.svg" alt="" />
                             </div>
                         </div>
                         <div class="log flex between">
@@ -157,7 +160,7 @@
                                 <p class="time">17:30</p>
                             </div>
                             <div class="check flex center">
-                                <img src="assets/icons/check.svg" alt="" />
+                                <img src="src/assets/icons/check.svg" alt="" />
                             </div>
                         </div>
                         <div class="log flex between">
@@ -166,7 +169,7 @@
                                 <p class="time">15:00</p>
                             </div>
                             <div class="check flex center">
-                                <img src="assets/icons/check.svg" alt="" />
+                                <img src="src/assets/icons/check.svg" alt="" />
                             </div>
                         </div>
                         <div class="log flex between">
@@ -175,12 +178,14 @@
                                 <p class="time">15:00</p>
                             </div>
                             <div class="check flex center">
-                                <img src="assets/icons/check.svg" alt="" />
+                                <img src="src/assets/icons/check.svg" alt="" />
                             </div>
                         </div>
                     </section>
                 </article>
             </section>
         </main>
+
+        <script src="src/main.js"></script>
     </body>
 </html>

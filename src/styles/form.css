@@ -19,6 +19,7 @@ form {
             padding: 0.5rem;
             outline: none;
             color: var(--base-gray-500);
+            width: 100%;
         }
 
         & .search-button {
