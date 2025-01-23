@@ -7,6 +7,9 @@ const cuttingCounterCard = document.querySelector('.card-cutting-counter')
 const loyaltyCard = document.querySelector('.card-loyalty')
 const historyCard = document.querySelector('.card-history')
 
+const modal = document.getElementById('modal')
+const close = document.querySelector('.close')
+
 form.onsubmit = async event => {
     event.preventDefault()
 
@@ -28,11 +31,22 @@ form.onsubmit = async event => {
             createLoyaltyCard(data)
             createCuttingCounterCard(data)
             createHistoryCard(data)
+
+            if (
+                data.loyaltyCard?.totalCuts === data.loyaltyCard?.cutsNeeded &&
+                data.loyaltyCard?.cutsRemaining == 0
+            ) {
+                modal.style.display = 'block'
+            }
         }
     } catch (error) {
         console.log(error)
         alert('Não foi possível carregar os dados deste cartão fidelidade!')
     }
+}
+
+close.onclick = function () {
+    modal.style.display = 'none'
 }
 
 function clearCards() {
