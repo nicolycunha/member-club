@@ -4,6 +4,7 @@ const inputId = document.getElementById('id')
 
 const clientCard = document.querySelector('.card-client')
 const cuttingCounterCard = document.querySelector('.card-cutting-counter')
+const loyaltyCard = document.querySelector('.card-loyalty')
 
 form.onsubmit = async event => {
     event.preventDefault()
@@ -23,6 +24,7 @@ form.onsubmit = async event => {
 
             clearCards()
             createClientCard(data)
+            createLoyaltyCard(data)
             createCuttingCounterCard(data)
         }
     } catch (error) {
@@ -35,15 +37,22 @@ function clearCards() {
     clientCard.innerHTML = ''
     clientCard.classList.remove('hidden')
 
+    loyaltyCard.innerHTML = ''
+    loyaltyCard.classList.remove('hidden')
+
     cuttingCounterCard.innerHTML = ''
     cuttingCounterCard.classList.remove('hidden')
 }
 
 function createClientCard(data) {
-    const photo = createClientCardPhoto(data)
-    const info = createClientCardInfo(data)
+    try {
+        const photo = createClientCardPhoto(data)
+        const info = createClientCardInfo(data)
 
-    clientCard.append(photo, info)
+        clientCard.append(photo, info)
+    } catch (error) {
+        throw error
+    }
 }
 
 function createClientCardPhoto(data) {
@@ -57,6 +66,7 @@ function createClientCardPhoto(data) {
         throw error
     }
 }
+
 function createClientCardInfo(data) {
     try {
         const info = document.createElement('div')
@@ -76,11 +86,110 @@ function createClientCardInfo(data) {
     }
 }
 
-function createCuttingCounterCard(data) {
-    const header = createCuttingCounterCardHeader(data)
-    const gift = createCuttingCounterCardGift()
+function createLoyaltyCard(data) {
+    try {
+        const header = createLoyaltyCardHeader(data)
 
-    cuttingCounterCard.append(header, gift)
+        const cutsGrid = createLoyaltyCardCutsGrid(data)
+
+        loyaltyCard.append(header, cutsGrid)
+    } catch (error) {
+        throw error
+    }
+}
+
+function createLoyaltyCardHeader(data) {
+    try {
+        const cutsNeeded = data.loyaltyCard?.cutsNeeded
+
+        const header = document.createElement('header')
+        header.classList.add('flex', 'gap-1', 'between')
+
+        const sectionDescription =
+            createLoyaltyCardHeaderDescription(cutsNeeded)
+
+        const sectionId = createLoyaltyCardHeaderId(data)
+
+        header.append(sectionDescription, sectionId)
+
+        return header
+    } catch (error) {
+        throw error
+    }
+}
+
+function createLoyaltyCardHeaderDescription(cutsNeeded) {
+    try {
+        const section = document.createElement('section')
+        section.classList.add('description')
+
+        const title = document.createElement('h3')
+        title.classList.add('subtitle')
+        title.textContent = 'Cartão fidelidade'
+
+        const description = document.createElement('p')
+        description.textContent = `Ao fazer cortes de cabelo, o ${
+            cutsNeeded == 8 ? 'oitavo' : 'décimo'
+        } sai de graça!`
+
+        section.append(title, description)
+
+        return section
+    } catch (error) {
+        throw error
+    }
+}
+
+function createLoyaltyCardHeaderId(data) {
+    try {
+        const section = document.createElement('section')
+        section.classList.add('id')
+
+        const id = document.createElement('span')
+        id.textContent = `ID: ${data.id}`
+
+        section.append(id)
+
+        return section
+    } catch (error) {
+        throw error
+    }
+}
+
+function createLoyaltyCardCutsGrid(data) {
+    try {
+        const list = document.createElement('ul')
+        list.classList.add('check-cuts', 'grid')
+
+        for (let item = 0; item < data.loyaltyCard?.cutsNeeded; item++) {
+            const listItem = document.createElement('li')
+
+            if (item < data.loyaltyCard?.totalCuts) {
+                const check = document.createElement('img')
+                check.setAttribute('src', 'src/assets/images/check.png')
+                check.setAttribute('alt', `${item}º corte feito`)
+
+                listItem.append(check)
+            }
+
+            list.append(listItem)
+        }
+
+        return list
+    } catch (error) {
+        throw error
+    }
+}
+
+function createCuttingCounterCard(data) {
+    try {
+        const header = createCuttingCounterCardHeader(data)
+        const gift = createCuttingCounterCardGift()
+
+        cuttingCounterCard.append(header, gift)
+    } catch (error) {
+        throw error
+    }
 }
 
 function createCuttingCounterCardHeader(data) {
