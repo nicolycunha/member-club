@@ -1,4 +1,4 @@
-const base_url = 'http://localhost:3333'
+const base_url = 'https://member-club-api.vercel.app'
 const form = document.querySelector('form')
 const inputId = document.getElementById('id')
 
