@@ -5,6 +5,7 @@ const inputId = document.getElementById('id')
 const clientCard = document.querySelector('.card-client')
 const cuttingCounterCard = document.querySelector('.card-cutting-counter')
 const loyaltyCard = document.querySelector('.card-loyalty')
+const historyCard = document.querySelector('.card-history')
 
 form.onsubmit = async event => {
     event.preventDefault()
@@ -26,6 +27,7 @@ form.onsubmit = async event => {
             createClientCard(data)
             createLoyaltyCard(data)
             createCuttingCounterCard(data)
+            createHistoryCard(data)
         }
     } catch (error) {
         console.log(error)
@@ -42,6 +44,9 @@ function clearCards() {
 
     cuttingCounterCard.innerHTML = ''
     cuttingCounterCard.classList.remove('hidden')
+
+    historyCard.innerHTML = ''
+    historyCard.classList.remove('hidden')
 }
 
 function createClientCard(data) {
@@ -254,6 +259,92 @@ function createCuttingCounterCardGift() {
         gift.append(image)
 
         return gift
+    } catch (error) {
+        throw error
+    }
+}
+
+function createHistoryCard(data) {
+    try {
+        const header = createHistoryCardHeader(data)
+
+        const divider = document.createElement('hr')
+        divider.classList.add('solid')
+
+        const cuts = createHistoryCardList(data)
+
+        historyCard.append(header, divider, cuts)
+    } catch (error) {
+        throw error
+    }
+}
+
+function createHistoryCardHeader(data) {
+    try {
+        const header = document.createElement('header')
+        header.classList.add('flex', 'between', 'mb-1', 'mt-0')
+
+        const title = document.createElement('h3')
+        title.classList.add('subtitle')
+        title.textContent = 'Histórico'
+
+        const description = document.createElement('p')
+        description.classList.add('details-text')
+        description.textContent = `${data.appointmentHistory.length} cortes`
+
+        header.append(title, description)
+
+        return header
+    } catch (error) {
+        throw error
+    }
+}
+
+function createHistoryCardList(data) {
+    try {
+        const section = document.createElement('section')
+        section.classList.add('logs', 'flex', 'gap-1', 'column')
+
+        for (let appointment of data.appointmentHistory) {
+            const item = document.createElement('div')
+            item.classList.add('log', 'flex', 'between')
+
+            const dateTime = createHistoryCardListDateTime(appointment)
+
+            const check = document.createElement('div')
+            check.classList.add('check', 'flex', 'center')
+
+            const image = document.createElement('img')
+            image.setAttribute('src', 'src/assets/icons/check.svg')
+            image.setAttribute('alt', 'Corte feito')
+
+            check.append(image)
+            item.append(dateTime, check)
+            section.append(item)
+        }
+
+        return section
+    } catch (error) {
+        throw error
+    }
+}
+
+function createHistoryCardListDateTime(appointment) {
+    try {
+        const dateTime = document.createElement('div')
+        dateTime.classList.add('date-time')
+
+        const date = document.createElement('h4')
+        date.classList.add('subtitle')
+        date.textContent = appointment.date
+
+        const time = document.createElement('p')
+        time.classList.add('time')
+        time.textContent = appointment.time
+
+        dateTime.append(date, time)
+
+        return dateTime
     } catch (error) {
         throw error
     }

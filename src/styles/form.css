@@ -12,7 +12,8 @@ form {
 
         & input,
         & input:focus,
-        & input:focus-visible {
+        & input:focus-visible,
+        & input[data-autocompleted] {
             font: var(--fw-base) var(--body-text-md) / 1.4 var(--ff-base);
             border: none;
             background: transparent;
@@ -20,6 +21,11 @@ form {
             outline: none;
             color: var(--base-gray-500);
             width: 100%;
+        }
+
+        & input:-webkit-autofill,
+        & input:-webkit-autofill:focus {
+            transition: background-color 600000s 0s, color 600000s 0s;
         }
 
         & .search-button {
